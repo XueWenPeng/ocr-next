@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src", // 源码目录
+    "target": "ES5", // 指定输出的ECMAScript版本
+    "module": "ESNext", // 面向未来的ESM模块化
+    "lib": [
+      // 指定引入的依赖库文件列表
+      "ES5",
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "WebWorker"
+    ],
+    "allowJs": true, // 允许编译js文件
+    "jsx": "react", // 在 .tsx文件中支持jsx
+    "sourceMap": true, // 生成相应的 .map文件
+    "checkJs": true, // 在js文件中报告错误
+    "noUnusedLocals": true, // 禁止未使用的局部变量
+    "isolatedModules": true, // 将每个文件作为单独的模块
+    "noUnusedParameters": true, // 禁止未使用的参数
+    "downlevelIteration": true, // 当 target 为 ES5 或 ES3 时，提供对 for..of，解构等的支持
+    "strict": true, // 启用所有严格类型检查选项
+    "moduleResolution": "node", // 将模块的解析模式设置为node.js解析模式
+    "esModuleInterop": true, // 允许 export = xxx 导出 ，并使用 import xxx form "module-name" 导入
+    "resolveJsonModule": true, // 允许使用 .json 扩展名导入的模块
+    "incremental": true, // Typescript 编译器在第一次编译时，会生产一个可以存储编译信息的文件(默认/tsconfig.tsbuildinfo)；编译器在二次编译时，可以根据此文件进行增量编译。
+    "baseUrl": "./", // 解析非相对模块名的基准目录
+    "paths": {
+      // 模块名到基于 baseUrl的路径映射的列表
+      "Src/*": ["src/*"],
+      "Components/*": ["src/components/*"],
+      "Assets/*": ["src/assets/*"],
+      "Routes/*": ["src/routes/*"],
+      "Pages/*": ["src/pages/*"],
+      "Utils/*": ["src/utils/*"]
+    },
+    "experimentalDecorators": true, // 启用对ES装饰器的实验性支持
+    "emitDecoratorMetadata": true, // 	给源码里的装饰器声明加上设计类型元数据。
+    "forceConsistentCasingInFileNames": true, // 禁止对同一个文件的不一致的引用
+    "skipLibCheck": true, // 跳过所哟声明文件的类型检查
+    "allowSyntheticDefaultImports": true, // 允许从没有默认导出的模块进行默认导入
+    "noEmit": true // 不生成输出文件
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build"]
+}
