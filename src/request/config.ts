@@ -42,51 +42,8 @@ export const handleRequestErrorStatus = (error: any): RequestErrorStatus | void 
   let errMsg = '请求出错！';
   let needLogin = false;
   if (error?.response) {
-    switch (error.response?.status) {
-      case 302:
-        errMsg = '接口重定向了！';
-        break;
-      case 400:
-        errMsg = '参数不正确！';
-        break;
-      case 401:
-        errMsg = '您未登录，或者登录已经超时，请先登录！';
-        needLogin = true;
-        break;
-      case 403:
-        errMsg = '您没有权限操作！';
-        break;
-      case 404:
-        errMsg = `请求地址出错: ${error.response.config.url}`;
-        break;
-      case 408:
-        errMsg = '请求超时！';
-        break;
-      case 409:
-        errMsg = '系统已存在相同数据！';
-        break;
-      case 500:
-        errMsg = '接口报错！';
-        break;
-      case 501:
-        errMsg = '服务未实现！';
-        break;
-      case 502:
-        errMsg = '网关错误！';
-        break;
-      case 503:
-        errMsg = '服务不可用！';
-        break;
-      case 504:
-        errMsg = '服务暂时无法访问，请稍后再试！';
-        break;
-      case 505:
-        errMsg = 'HTTP版本不受支持！';
-        break;
-      default:
-        errMsg = '请求异常！';
-        break;
-    }
+    if (error.response?.status === 400) needLogin = true;
+    if (error.response.data?.message) errMsg = error.response.data.message;
   }
   if (error?.message?.includes('timeout')) errMsg = '网络请求超时！';
   if (error?.message?.includes('Network')) errMsg = window.navigator.onLine ? '服务端异常！' : '请检查网络！';

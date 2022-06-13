@@ -32,7 +32,8 @@
       "Assets/*": ["src/assets/*"],
       "Routes/*": ["src/routes/*"],
       "Pages/*": ["src/pages/*"],
-      "Utils/*": ["src/utils/*"]
+      "Utils/*": ["src/utils/*"],
+      "Request/*": ["src/request/*"]
     },
     "experimentalDecorators": true, // 启用对ES装饰器的实验性支持
     "emitDecoratorMetadata": true, // 	给源码里的装饰器声明加上设计类型元数据。

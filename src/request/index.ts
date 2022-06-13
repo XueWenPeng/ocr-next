@@ -31,8 +31,8 @@ export interface CustomSettings {
 
 const Request = <T, U>(
   reqConfig: ApiRequestParams<T>,
-  customSettings: CustomSettings,
-  otherConfig: AxiosRequestConfig,
+  customSettings?: CustomSettings,
+  otherConfig?: AxiosRequestConfig,
 ): Promise<U> => {
   const { url, method = 'GET', params, data } = reqConfig;
   const { pathname } = window.location;

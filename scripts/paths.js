@@ -43,6 +43,7 @@ module.exports = {
   appSrcPages: resolveApp('src/pages'),
   appSrcRoutes: resolveApp('src/routes'),
   appSrcAssets: resolveApp('src/assets'),
+  appSrcRequest: resolveApp('src/request'),
   appPackageJson: resolveApp('package.json'),
   appTsConfig: resolveApp('tsconfig.json'),
   moduleFileExtensions,

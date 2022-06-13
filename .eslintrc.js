@@ -88,7 +88,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': OFF,
     '@typescript-eslint/no-explicit-any': OFF,
     '@typescript-eslint/no-use-before-define': ERROR,
-    '@typescript-eslint/no-unused-vars': ERROR,
+    '@typescript-eslint/no-unused-vars': WARN,
     'no-unused-vars': OFF,
 
     'react/jsx-filename-extension': [ERROR, { extensions: ['.tsx', 'ts', '.jsx', 'js'] }],
@@ -98,6 +98,7 @@ module.exports = {
     'react/no-unused-prop-types': OFF,
     'react/jsx-no-constructed-context-values': OFF,
     'react/destructuring-assignment': OFF,
+    'react/require-default-props': OFF,
     'react/state-in-constructor': OFF,
     'react/jsx-props-no-spreading': OFF,
     'react/prop-types': OFF,
@@ -133,5 +134,6 @@ module.exports = {
     'no-use-before-define': OFF,
     'no-restricted-syntax': OFF,
     'no-continue': OFF,
+    'no-param-reassign': OFF,
   },
 };

@@ -1,0 +1,30 @@
+.content-header-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  margin-left: 16px;
+  padding: 0 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 0 0 #e5e5e5;
+
+  > ::before {
+    display: inline-block;
+    width: 3px;
+    height: 16px;
+    margin-right: 4px;
+    background-color: #2b67f0;
+    transform: translateY(3px);
+    content: '';
+  }
+
+  .content-header-box-title {
+    color: #999;
+
+    > :last-child {
+      color: #000;
+      font-weight: 600;
+    }
+  }
+}

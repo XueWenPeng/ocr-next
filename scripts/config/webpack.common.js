@@ -62,6 +62,7 @@ module.exports = {
       Utils: paths.appSrcUtils,
       Pages: paths.appSrcPages,
       Assets: paths.appSrcAssets,
+      Request: paths.appSrcRequest,
     },
   },
   module: {
