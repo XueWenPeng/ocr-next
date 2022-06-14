@@ -17,15 +17,15 @@ export const routeConfig: RouteConfig[] = [
           // 非车案件管理
           {
             routePath: 'case/case',
-            componentPath: 'home',
+            componentPath: 'case/list',
           },
           {
             routePath: 'case/casedid',
-            componentPath: 'home',
+            componentPath: 'case/list',
           },
           {
             routePath: 'case/caseback',
-            componentPath: 'home',
+            componentPath: 'case/list',
           },
           // 车险案件管理
           {

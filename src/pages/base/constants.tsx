@@ -56,7 +56,7 @@ export const getMenuConfig = (backCase: number): MenuConfig[] => [
       {
         key: '/app/case/caseback',
         label: (
-          <Badge overflowCount={9999} count={backCase} offset={[18, 0]}>
+          <Badge overflowCount={9999} count={backCase} offset={[20, 0]}>
             <span>退回案件</span>
           </Badge>
         ),

@@ -4,13 +4,15 @@ import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 import logoImage from 'Assets/images/logo.png';
 import defaultAvatar from 'Assets/images/defaultAvatar.jpg';
-import { UserInfoRes } from 'Pages/root/services';
 import { safeJSONParse } from 'Utils/methods';
+import ContentCard from 'Components/contentcard';
+import ContentTitle from 'Components/contenttitle';
+import XCXImg from 'Assets/images/XCXImg.jpg';
+import { path2contentTitle, userInfo } from 'Utils/constants';
 import { getMenuConfig, path2openKeys } from './constants';
 import { getBackcaseApi } from './services';
 import './index.less';
 
-const userInfo: UserInfoRes = safeJSONParse(localStorage.getItem('user'), {});
 const getItems = (backCase: number) =>
   getMenuConfig(backCase).filter((cfg) => {
     if (cfg.hidden) return false;
@@ -59,6 +61,9 @@ const Base = () => {
       <Layout.Header className='base-header'>
         <img src={logoImage} alt='LOGO' />
         <div className='base-userinfo'>
+          <Popover placement='bottom' content={<img className='base-xcx' src={XCXImg} alt='小程序二维码' />}>
+            <span className='mr-16 base-module-text'>小程序</span>
+          </Popover>
           <img src={userInfo.avatarUrl || defaultAvatar} alt='avator' className='base-avatar' />
           <Popover
             placement='bottom'
@@ -92,7 +97,10 @@ const Base = () => {
           />
         </Layout.Sider>
         <Layout>
-          <Outlet />
+          <ContentTitle title={path2contentTitle[pathname]} />
+          <ContentCard>
+            <Outlet />
+          </ContentCard>
         </Layout>
       </Layout>
     </Layout>

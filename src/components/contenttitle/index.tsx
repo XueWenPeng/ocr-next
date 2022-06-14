@@ -6,7 +6,7 @@ interface ContetntTitleProps {
   extra?: ReactNode;
 }
 
-const ContetntTitle = ({ title, extra = null }: ContetntTitleProps) => {
+const ContentTitle = ({ title = '', extra = null }: ContetntTitleProps) => {
   const keys = title.split('/');
   return (
     <div className='content-header-box'>
@@ -20,4 +20,4 @@ const ContetntTitle = ({ title, extra = null }: ContetntTitleProps) => {
   );
 };
 
-export default ContetntTitle;
+export default ContentTitle;
