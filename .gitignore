@@ -3,3 +3,4 @@ build/
 .vscode/
 CHANGELOG.md
 *.tsbuildinfo
+package-lock.json

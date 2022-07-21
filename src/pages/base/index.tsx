@@ -4,11 +4,11 @@ import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 import logoImage from 'Assets/images/logo.png';
 import defaultAvatar from 'Assets/images/defaultAvatar.jpg';
-import { safeJSONParse } from 'Utils/methods';
+import { safeJSONParse, getUserInfo } from 'Utils/methods';
 import ContentCard from 'Components/contentcard';
 import ContentTitle from 'Components/contenttitle';
 import XCXImg from 'Assets/images/XCXImg.jpg';
-import { path2contentTitle, userInfo } from 'Utils/constants';
+import { path2contentTitle } from 'Utils/constants';
 import { getMenuConfig, path2openKeys } from './constants';
 import { getBackcaseApi } from './services';
 import './index.less';
@@ -16,6 +16,7 @@ import './index.less';
 const getItems = (backCase: number) =>
   getMenuConfig(backCase).filter((cfg) => {
     if (cfg.hidden) return false;
+    const userInfo = getUserInfo();
     if ((cfg.auth && userInfo.permissions?.includes(cfg.auth)) || !cfg.auth) {
       if (cfg.children) {
         cfg.children = cfg.children.filter(
@@ -34,6 +35,7 @@ const Base = () => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
   const [openKeys, setOpenKeys] = useState<string[]>([path2openKeys[pathname]]);
   const items = useMemo(() => getItems(backCase), [backCase]);
+  const userInfo = getUserInfo();
 
   const logout = () => {
     localStorage.clear();

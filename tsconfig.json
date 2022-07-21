@@ -15,9 +15,9 @@
     "jsx": "react", // 在 .tsx文件中支持jsx
     "sourceMap": true, // 生成相应的 .map文件
     "checkJs": true, // 在js文件中报告错误
-    "noUnusedLocals": true, // 禁止未使用的局部变量
+    "noUnusedLocals": false, // 禁止未使用的局部变量
     "isolatedModules": true, // 将每个文件作为单独的模块
-    "noUnusedParameters": true, // 禁止未使用的参数
+    "noUnusedParameters": false, // 禁止未使用的参数
     "downlevelIteration": true, // 当 target 为 ES5 或 ES3 时，提供对 for..of，解构等的支持
     "strict": true, // 启用所有严格类型检查选项
     "moduleResolution": "node", // 将模块的解析模式设置为node.js解析模式

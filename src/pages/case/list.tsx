@@ -22,7 +22,7 @@ const CaseList = () => {
         onReset={() => console.log('reset')}
         defaultOpen
       />
-      <CaseTable />
+      {/* <CaseTable /> */}
     </>
   );
 };

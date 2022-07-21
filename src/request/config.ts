@@ -42,7 +42,7 @@ export const handleRequestErrorStatus = (error: any): RequestErrorStatus | void 
   let errMsg = '请求出错！';
   let needLogin = false;
   if (error?.response) {
-    if (error.response?.status === 400) needLogin = true;
+    if (error.response?.status === 400 || error.response?.status === 401) needLogin = true;
     if (error.response.data?.message) errMsg = error.response.data.message;
   }
   if (error?.message?.includes('timeout')) errMsg = '网络请求超时！';

@@ -1,8 +1,4 @@
 import { SearchConfig } from 'mishu-ui/es/busnessComponents/tableSearch/typing';
-import { userInfo } from 'Utils/constants';
-
-export const permissions: string[] = userInfo.permissions || [];
-export const AUTH_CASE_SELECT_ALL = permissions.includes('auth/case/select/all');
 
 export const columns = [
   { title: '案件类型', dataIndex: 'caseTypeName', key: 'caseTypeName', width: 85 },
